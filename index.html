@@ -110,11 +110,11 @@
                 loadingBar.style.display = "none";
                 fullscreenButton.onclick = () => {
                     unityInstance.SetFullscreen(1);
-                    if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.initUnityInstance) {
-                        window.webkit.messageHandlers.initUnityInstance.postMessage("OK");
-                    }
-                    if (typeof JsTest !== "undefined") { JsTest.showToast("OK"); }
                 };
+                if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.initUnityInstance) {
+                    window.webkit.messageHandlers.initUnityInstance.postMessage("OK");
+                }
+                if (typeof JsTest !== "undefined") { JsTest.showToast("OK"); }
             }).catch((message) => {
                 alert(message);
             });
